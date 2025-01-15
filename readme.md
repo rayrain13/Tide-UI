@@ -1,11 +1,11 @@
-# Test-UI
+# Kairos-UI
 
-掘金[《手摸手带你封装 Vue 组件库以及组件开发》](https://juejin.cn/column/7397431074744057891)专栏示例源码
+
 
 ## 代码结构
 
 ```
-|-- test-ui
+|-- kairos-ui
     |-- docs // 组件库文档
         |-- .vitepress
             |-- theme  // 主题相关（全局组件注册也在这）
