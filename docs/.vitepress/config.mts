@@ -3,7 +3,7 @@ import { defineConfig } from "vitepress";
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   base: "",
-  title: "Test UI",
+  title: "Kairos UI",
   description: "这是描述",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config

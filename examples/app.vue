@@ -64,7 +64,7 @@
 
 <script setup>
 import { ref } from "vue";
-import { TMessage } from "@test-ui/components";
+
 
 const loading = ref(true);
 const treeRef = ref(null);
