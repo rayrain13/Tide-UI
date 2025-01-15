@@ -1,5 +1,5 @@
 import Button from './src/button.vue'
-import { withInstall } from '@test-ui/utils';
+import { withInstall } from '@kairos-ui/utils';
 
 export const TButton = withInstall(Button)
 
