@@ -60,6 +60,23 @@
       <t-button type="primary" :loading="loading">加载中</t-button>
     </div>
   </div>
+
+  <!-- message -->
+  <h2>消息</h2>
+  <h3>Message</h3>
+  <t-button type="success" @click="handleMessage('success')">success</t-button>
+  <t-button type="info" @click="handleMessage('info')">info</t-button>
+  <t-button type="warning" @click="handleMessage('warning')">warning</t-button>
+  <t-button type="danger" @click="handleMessage('error')">danger</t-button>
+  <h3>Message close</h3>
+  <t-button type="success" @click="handleMessage('success', true)">success</t-button>
+  <t-button type="info" @click="handleMessage('info', true)">info</t-button>
+  <t-button type="warning" @click="handleMessage('warning', true)">warning</t-button>
+  <t-button type="danger" @click="handleMessage('error', true)">danger</t-button>
+  <h3>Message time</h3>
+  <t-button type="success" @click="handleMessage('success', true, 1000)">1s</t-button>
+  <t-button type="success" @click="handleMessage('success', true, 5000)">5s</t-button>
+  
 </template>
 
 <script setup>
