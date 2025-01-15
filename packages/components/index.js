@@ -1,14 +1,14 @@
 import * as components from "./components";
-import "@kairos-ui/theme-chalk/index.less"
-import type {App} from 'vue'
+import "@test-ui/theme-chalk/index.less"
 
 const FUNCTION_COMP = ["TMessage"];
 
 export default {
-  install(app :App) {
+  install(app) {
     Object.entries(components).forEach(([key, value]) => {
-      if (!FUNCTION_COMP.includes(key)) app.component(key, value as any)
+      if (!FUNCTION_COMP.includes(key)) app.component(key, value)
     });
   }
 }
 
+export const TMessage = components.TMessage;

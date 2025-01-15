@@ -59,29 +59,92 @@
     <div>
       <t-button type="primary" :loading="loading">加载中</t-button>
     </div>
+    <!-- message -->
+    <h2>消息</h2>
+    <h3>Message</h3>
+    <t-button type="success" @click="handleMessage('success')">success</t-button>
+    <t-button type="info" @click="handleMessage('info')">info</t-button>
+    <t-button type="warning" @click="handleMessage('warning')">warning</t-button>
+    <t-button type="danger" @click="handleMessage('error')">danger</t-button>
+    <h3>Message close</h3>
+    <t-button type="success" @click="handleMessage('success', true)">success</t-button>
+    <t-button type="info" @click="handleMessage('info', true)">info</t-button>
+    <t-button type="warning" @click="handleMessage('warning', true)">warning</t-button>
+    <t-button type="danger" @click="handleMessage('error', true)">danger</t-button>
+    <h3>Message time</h3>
+    <t-button type="success" @click="handleMessage('success', true, 1000)">1s</t-button>
+    <t-button type="success" @click="handleMessage('success', true, 5000)">5s</t-button>
+    <!-- tree -->
+    <h2>树</h2>
+    <h3>Tree</h3>
+    <h3>基础树</h3>
+    <t-tree :data="JSON.parse(JSON.stringify(treeData))" node-key="id" />
+    <h3>默认展开</h3>
+    <t-tree :data="JSON.parse(JSON.stringify(treeData))" node-key="id" :default-expand-all="true" />
+    <h3>可选择</h3>
+    <t-tree
+      :data="JSON.parse(JSON.stringify(treeData))"
+      node-key="id"
+      :showCheckbox="true"
+      :default-expand-all="true"
+      @handleClickNode="handleClickNode"
+    />
+    <h3>获取选中节点/设置选中节点</h3>
+    <t-button type="primary" @click="getCheckedNodes">获取选中的key</t-button>
+    <t-button type="primary" @click="setCheckedNodes">设置选中的key</t-button>
+    <t-tree
+      ref="treeRef"
+      :data="JSON.parse(JSON.stringify(treeData))"
+      node-key="id"
+      :showCheckbox="true"
+      @handleClickNode="handleClickNode"
+    />
+    <h2>步骤条 Steps</h2>
+    <h3>基础使用</h3>
+    <div style="margin-bottom: 10px">
+      <t-button type="primary" @click="handleNextStep">下一步</t-button> 当前节点{{ active }}
+    </div>
+    <t-steps :active="active">
+      <t-step title="第一步" description="打开微信扫一扫" />
+      <t-step title="第二步" description="添加好友" />
+      <t-step title="第三步" description="选择我的头像" />
+      <t-step title="第四步" description="转款1000万" />
+    </t-steps>
+    <h3>居中的步骤条</h3>
+    <t-steps :active="active" align="center">
+      <t-step title="第一步" description="打开微信扫一扫" />
+      <t-step title="第二步" description="添加好友" />
+      <t-step title="第三步" description="选择我的头像" />
+      <t-step title="第四步" description="转款1000万" />
+    </t-steps>
+    <h3>自定义图标1</h3>
+    <t-steps :active="active">
+      <t-step title="起床" icon="notification" />
+      <t-step title="炒股" icon="data-view" />
+      <t-step title="加仓" icon="good" />
+      <t-step title="亏大了" icon="cry" />
+    </t-steps>
+    <h3>自定义图标2</h3>
+    <t-steps :active="active" align="center">
+      <t-step title="起床">
+        <template #icon> &#127774; </template>
+      </t-step>
+      <t-step title="又亏了">
+        <template #icon> &#128201;</template>
+      </t-step>
+      <t-step title="继续加仓">
+        <template #icon> + </template>
+      </t-step>
+      <t-step title="亏成狗">
+        <template #icon> &#128021; </template>
+      </t-step>
+    </t-steps>
   </div>
-
-  <!-- message -->
-  <h2>消息</h2>
-  <h3>Message</h3>
-  <t-button type="success" @click="handleMessage('success')">success</t-button>
-  <t-button type="info" @click="handleMessage('info')">info</t-button>
-  <t-button type="warning" @click="handleMessage('warning')">warning</t-button>
-  <t-button type="danger" @click="handleMessage('error')">danger</t-button>
-  <h3>Message close</h3>
-  <t-button type="success" @click="handleMessage('success', true)">success</t-button>
-  <t-button type="info" @click="handleMessage('info', true)">info</t-button>
-  <t-button type="warning" @click="handleMessage('warning', true)">warning</t-button>
-  <t-button type="danger" @click="handleMessage('error', true)">danger</t-button>
-  <h3>Message time</h3>
-  <t-button type="success" @click="handleMessage('success', true, 1000)">1s</t-button>
-  <t-button type="success" @click="handleMessage('success', true, 5000)">5s</t-button>
-  
 </template>
 
 <script setup>
 import { ref } from "vue";
-
+import { TMessage } from "@test-ui/components";
 
 const loading = ref(true);
 const treeRef = ref(null);

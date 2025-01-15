@@ -1,15 +1,12 @@
 const BUTTON_TYPE = ["default", "primary", "success", "warning", "info", "danger"];
 const BUTTON_SIZE = ["", "small", "mini"];
 
-type ButtonType = typeof BUTTON_TYPE[number];
-type ButtonSize = typeof BUTTON_SIZE[number];
-
 export const ButtonProps = {
   // 类型
   type: {
     type: String,
     default: "default",
-    validator(value: ButtonType) {
+    validator(value) {
       return BUTTON_TYPE.includes(value);
     },
   },
@@ -17,7 +14,7 @@ export const ButtonProps = {
   size: {
     type: String,
     default: "",
-    validator(value: ButtonType) {
+    validator(value) {
       return BUTTON_SIZE.includes(value);
     },
   },
