@@ -144,7 +144,7 @@
 
 <script setup>
 import { ref } from "vue";
-import { TMessage } from "@test-ui/components";
+import { TMessage } from "@kairos-ui/components";
 
 const loading = ref(true);
 const treeRef = ref(null);

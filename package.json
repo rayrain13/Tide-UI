@@ -1,5 +1,5 @@
 {
-  "name": "test-ui",
+  "name": "kairos-ui",
   "version": "1.0.0",
   "description": "",
   "type": "module",
@@ -20,10 +20,10 @@
   "license": "ISC",
   "dependencies": {
     "@highlightjs/vue-plugin": "^2.1.0",
-    "@test-ui/components": "workspace:^",
-    "@test-ui/examples": "workspace:^",
-    "@test-ui/theme-chalk": "workspace:^",
-    "@test-ui/utils": "workspace:^",
+    "@kairos-ui/components": "workspace:^",
+    "@kairos-ui/examples": "workspace:^",
+    "@kairos-ui/theme-chalk": "workspace:^",
+    "@kairos-ui/utils": "workspace:^",
     "highlight.js": "^11.10.0"
   },
   "devDependencies": {
